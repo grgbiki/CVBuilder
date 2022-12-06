@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_500"
+    tools:context=".login.LoginActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/login_form"/>
+
+    <RelativeLayout
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_round_border_top"
+        android:elevation="2dp"
+        android:padding="@dimen/padding_20"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tite_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/margin_20" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tite_text"
+            android:layout_marginBottom="@dimen/margin_15"
+            android:background="@drawable/edit_text_background_rounded_corner"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/password_edit_text"
+            android:drawablePadding="@dimen/padding_5"
+            android:drawableStart="@drawable/ic_email_24dp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email_edit_text"
+            android:layout_marginBottom="@dimen/margin_15"
+            android:background="@drawable/edit_text_background_rounded_corner"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            android:drawablePadding="@dimen/padding_5"
+            android:drawableStart="@drawable/ic_lock_black_24dp"
+            android:drawableEnd="@drawable/ic_red_eye_filled_24dp"/>
+
+        <TextView
+            android:id="@+id/error_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password_edit_text"
+            android:layout_marginBottom="@dimen/margin_15"
+            android:gravity="center"
+            android:background="@drawable/error_text_background_rounded_corner"
+            android:padding="@dimen/padding_15"
+            android:text="@string/login_error"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/error_text_view"
+            android:layout_marginTop="@dimen/margin_15"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="@dimen/padding_18"
+            android:text="@string/login_button_text" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

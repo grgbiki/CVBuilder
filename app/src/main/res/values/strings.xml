@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CV Builder</string>
+    <string name="title_home">Home</string>
+    <string name="title_about_me">About Me</string>
+    <string name="title_work">Work</string>
+    <string name="title_contact">Contact</string>
+
+    <string name="hint_email">Email Address</string>
+    <string name="hint_password">Password</string>
+    <string name="login_button_text">Login</string>
+
+    <string name="login_error">Incorrect email or password</string>
+</resources>
