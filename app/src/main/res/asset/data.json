@@ -1,0 +1,52 @@
+{
+  "educations": [
+    {
+      "institution": "Maharishi International University",
+      "degree": "Masters of Science in Computer Science"
+    },
+    {
+      "institution": "Islington College",
+      "degree": "Bachelors of Science in Computing (Hons)"
+    }
+  ],
+  "experiences": [
+    {
+      "employer": "Virtusa",
+      "address": "MA",
+      "country": "USA",
+      "jobTitle": "Android Developer",
+      "startDate": "05/03/2022",
+      "endDate": "Present",
+      "responsibilities": [
+        "Developing and supporting android application",
+        "Improving accessibility compatibility of the application"
+      ]
+    },
+    {
+      "employer": "Karyathalo",
+      "address": "Kathmandu",
+      "country": "Nepal",
+      "jobTitle": "Flutter Developer",
+      "startDate": "2019",
+      "endDate": "2021",
+      "responsibilities": [
+        "Developing and supporting cross-platform application",
+        "Integrating app with spring boot backend",
+        "Supporting apps for multiple screen resolution"
+      ]
+    },
+    {
+      "employer": "Guru Infosys",
+      "address": "Kathmandu",
+      "country": "Nepal",
+      "jobTitle": "Software Developer",
+      "startDate": "2018",
+      "endDate": "2019",
+      "responsibilities": [
+        "Designing functional user interfaces for mobile applications",
+        "Streamlining data migration from MySQL to Postgres",
+        "Improving and supporting existing .NET project"
+      ]
+    }
+  ]
+}

@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val prefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-        val isLoggedIn = prefs.getBoolean("loggedIn", false)
+        val isLoggedIn = prefs.getBoolean("loggedIn", true)
 
         if (isLoggedIn) startMainActivity()
 
