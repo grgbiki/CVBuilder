@@ -8,18 +8,14 @@
     <dimen name="text_size_16">16sp</dimen>
     <dimen name="text_size_18">18sp</dimen>
     <dimen name="text_size_20">20sp</dimen>
-
-    //Margins
-    <dimen name="margin_10">10dp</dimen>
-    <dimen name="margin_15">15dp</dimen>
-    <dimen name="margin_20">20dp</dimen>
-
-    //Paddings
-    <dimen name="padding_5">5dp</dimen>
-    <dimen name="padding_10">10dp</dimen>
-    <dimen name="padding_15">15dp</dimen>
-    <dimen name="padding_18">18dp</dimen>
-    <dimen name="padding_20">20dp</dimen>
+    
+    //Spacing
+    <dimen name="spacing_5">5dp</dimen>
+    <dimen name="spacing_10">10dp</dimen>
+    <dimen name="spacing_15">15dp</dimen>
+    <dimen name="spacing_18">18dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="spacing_50">50dp</dimen>
 
     //Borders
     <dimen name="border_5">5dp</dimen>

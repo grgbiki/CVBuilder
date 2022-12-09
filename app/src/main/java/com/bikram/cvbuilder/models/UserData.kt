@@ -1,6 +1,6 @@
 package com.bikram.cvbuilder.models
 
-class UserData(
+data class UserData(
     val educations: List<Education>,
     val experiences: List<Experience>
 )

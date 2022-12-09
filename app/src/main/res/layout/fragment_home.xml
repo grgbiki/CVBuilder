@@ -18,8 +18,8 @@
         android:id="@+id/display_picture"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_margin="@dimen/margin_15"
-        android:padding="@dimen/padding_5"
+        android:layout_margin="@dimen/spacing_15"
+        android:padding="@dimen/spacing_5"
         android:scaleType="centerCrop"
         android:src="@drawable/profile"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,13 +29,13 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_15"
+        android:layout_margin="@dimen/spacing_15"
         android:background="@drawable/background_rounded_corner"
         android:backgroundTint="@color/white"
-        android:paddingStart="@dimen/padding_15"
-        android:paddingTop="@dimen/padding_5"
-        android:paddingEnd="@dimen/padding_15"
-        android:paddingBottom="@dimen/padding_5"
+        android:paddingStart="@dimen/spacing_15"
+        android:paddingTop="@dimen/spacing_5"
+        android:paddingEnd="@dimen/spacing_15"
+        android:paddingBottom="@dimen/spacing_5"
         app:layout_constraintBottom_toBottomOf="@+id/display_picture"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -61,8 +61,8 @@
         android:id="@+id/career_note_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_15"
-        app:contentPadding="@dimen/padding_15"
+        android:layout_margin="@dimen/spacing_15"
+        app:contentPadding="@dimen/spacing_15"
         app:layout_constraintTop_toBottomOf="@+id/display_picture">
 
         <TextView
@@ -78,8 +78,8 @@
         android:id="@+id/work_experience_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_15"
-        app:contentPadding="@dimen/padding_15"
+        android:layout_margin="@dimen/spacing_15"
+        app:contentPadding="@dimen/spacing_15"
         app:layout_constraintTop_toBottomOf="@+id/career_note_container">
 
         <TextView

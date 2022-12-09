@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bikram.cvbuilder.databinding.FragmentAboutMeBinding
+import com.bikram.cvbuilder.utils.SpacingItemDecorator
+
 
 class AboutMeFragment : Fragment() {
 
@@ -22,8 +24,22 @@ class AboutMeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
+        _binding = FragmentAboutMeBinding.inflate(inflater, container, false)
+        val aboutMeViewModel =
             ViewModelProvider(this)[AboutMeViewModel::class.java]
+        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.educationRecycleView.isNestedScrollingEnabled = false
+        binding.educationRecycleView.layoutManager = layoutManager
+
+        val spacingItemDecorator = SpacingItemDecorator(15)
+        binding.educationRecycleView.addItemDecoration(spacingItemDecorator)
+
+        var adapter = EducationRecyclerAdapter(emptyList())
+        binding.educationRecycleView.adapter = adapter
+
+        aboutMeViewModel.getEducation(context!!).observe(viewLifecycleOwner) {
+            adapter.setItems(it)
+        }
 
         return binding.root
     }

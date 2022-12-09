@@ -3,10 +3,10 @@
     <solid android:color="@color/light_grey" />
 
     <padding
-        android:bottom="@dimen/padding_15"
-        android:left="@dimen/padding_15"
-        android:right="@dimen/padding_15"
-        android:top="@dimen/padding_15" />
+        android:bottom="@dimen/spacing_15"
+        android:left="@dimen/spacing_15"
+        android:right="@dimen/spacing_15"
+        android:top="@dimen/spacing_15" />
 
     <corners
         android:bottomLeftRadius="@dimen/border_5"

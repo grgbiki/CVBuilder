@@ -1,6 +1,6 @@
 package com.bikram.cvbuilder.models
 
-class Education(
+data class Education(
     val institution: String,
     val degree: String
 )

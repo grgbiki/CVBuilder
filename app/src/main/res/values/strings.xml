@@ -10,4 +10,7 @@
     <string name="login_button_text">Login</string>
 
     <string name="login_error">Incorrect email or password</string>
+
+    <string name="about_me_detail">Motivated Software Developer with 3 years of professional experience leading projects through all phases of software development life cycle. Demonstrated expertise in providing support for mobile and web applications while improving systems and enhancing performance. Skilled in using technologies such as Java, Dart, Kotlin, SQLite, VS Code, and Postgres.
+    </string>
 </resources>

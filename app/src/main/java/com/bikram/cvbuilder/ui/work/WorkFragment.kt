@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bikram.cvbuilder.databinding.FragmentWorkBinding
+import com.bikram.cvbuilder.ui.aboutme.EducationRecyclerAdapter
+import com.bikram.cvbuilder.utils.SpacingItemDecorator
 
 class WorkFragment : Fragment() {
 
@@ -22,17 +25,23 @@ class WorkFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val workViewModel =
-            ViewModelProvider(this).get(WorkViewModel::class.java)
-
         _binding = FragmentWorkBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val workViewModel =
+            ViewModelProvider(this)[WorkViewModel::class.java]
+        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.experienceRecyclerView.isNestedScrollingEnabled = false
+        binding.experienceRecyclerView.layoutManager = layoutManager
 
-        val textView: TextView = binding.textNotifications
-        workViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val spacingItemDecorator = SpacingItemDecorator(50)
+        binding.experienceRecyclerView.addItemDecoration(spacingItemDecorator)
+
+        var adapter = ExperienceRecyclerAdapter(emptyList(), context!!)
+        binding.experienceRecyclerView.adapter = adapter
+
+        workViewModel.getExperience(context!!).observe(viewLifecycleOwner) {
+            adapter.setItems(it)
         }
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {

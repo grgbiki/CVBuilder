@@ -22,17 +22,11 @@ class ContactFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        _binding = FragmentContactBinding.inflate(inflater, container, false)
         val dashboardViewModel =
             ViewModelProvider(this).get(AboutMeViewModel::class.java)
 
-        _binding = FragmentContactBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {

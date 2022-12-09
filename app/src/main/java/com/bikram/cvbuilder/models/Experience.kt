@@ -1,6 +1,6 @@
 package com.bikram.cvbuilder.models
 
-class Experience(
+data class Experience(
     val employer: String,
     val address: String,
     val country: String,
