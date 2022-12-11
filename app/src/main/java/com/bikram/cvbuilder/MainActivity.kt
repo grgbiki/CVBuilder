@@ -11,7 +11,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bikram.cvbuilder.databinding.ActivityMainBinding
-import com.bikram.cvbuilder.login.LoginActivity
+import com.bikram.cvbuilder.ui.info.AppInfoActivity
+import com.bikram.cvbuilder.ui.login.LoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -49,11 +50,13 @@ class MainActivity : AppCompatActivity() {
         // Handle item selection
         return when (item.itemId) {
             R.id.action_info -> {
+                val intent = Intent(this, AppInfoActivity::class.java)
+                startActivity(intent)
                 true
             }
             R.id.action_log_out -> {
                 val prefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-                with (prefs.edit()) {
+                with(prefs.edit()) {
                     putBoolean("loggedIn", false)
                     apply()
                 }

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bikram.cvbuilder.databinding.RecyclerViewItemWithSubtextBinding
 import com.bikram.cvbuilder.models.Contact
@@ -13,13 +14,10 @@ import com.bikram.cvbuilder.utils.LoadDrawableImage
 
 
 class ContactUsRecyclerAdapter(
-    private val context: Context,
-    private var contacts: List<Contact>
-) :
-    RecyclerView.Adapter<ContactUsRecyclerAdapter.ViewHolder>() {
+    private val context: Context, private var contacts: List<Contact>
+) : RecyclerView.Adapter<ContactUsRecyclerAdapter.ViewHolder>() {
     class ViewHolder(val binding: RecyclerViewItemWithSubtextBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-    }
+        RecyclerView.ViewHolder(binding.root) {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
@@ -54,7 +52,11 @@ class ContactUsRecyclerAdapter(
                             intent = Intent(context, WebViewActivity::class.java)
                             intent.putExtra("url", value)
                         }
-                        "Resume pdf" -> {}
+                        "Resume pdf" -> {
+                            val link =
+                                "https://drive.google.com/file/d/1bpKGVMNm6mvjqlYQScco9Bupo_I-an9E/view?usp=share_link"
+                            intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+                        }
                     }
                     context.startActivity(intent)
                 }

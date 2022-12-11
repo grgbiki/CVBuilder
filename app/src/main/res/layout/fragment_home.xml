@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <RelativeLayout
+    <ImageView
         android:id="@+id/profile_background"
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:background="@color/purple_500"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
         app:layout_constraintTop_toTopOf="parent" />
 
 

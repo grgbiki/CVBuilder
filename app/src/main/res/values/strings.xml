@@ -4,6 +4,7 @@
     <string name="title_about_me">About Me</string>
     <string name="title_work">Work Experience</string>
     <string name="title_contact">My Contacts</string>
+    <string name="title_app_info">App Info</string>
 
     <string name="menu_log_out">Log Out</string>
     <string name="menu_info">Info</string>
@@ -20,4 +21,9 @@
     <string name="career_note"><b><font color='black'>Completed</font></b> on-campus studies and is currently taking distance education to complete a Master\'s degree in computer science. Working as a full-time android developer for client PNC Bank through Virtusa.</string>
     <string name="technologies"><b><font color='black'>Languages:</font></b> Java, Dart, Kotlin, JavaScript \n<b><font color='black'>Web:</font></b> HTML, CSS, SASS, React, Angular \n<b><font color='black'>Web Services:</font></b> REST \n<b><font color='black'>Frameworks:</font></b> Flutter, Express, Android \n<b><font color='black'>Databases:</font></b> MySQL, Postgres, My SQLite, MongoDB \n<b><font color='black'>Design Patterns:</font></b> MVC, MVVM, BLOC \n<b><font color='black'>SDLC:</font></b> Prototype, Agile, Waterfall \n<b><font color='black'>Tools:</font></b> VS Code, Postman, Git, Maven, StarUML \n<b><font color='black'>Platforms:</font></b> Windows \n<b><font color='black'>Big Data:</font></b> Hadoop, MapReduce, Spark, PIG, Hive, HBase, Sqoop, Flume</string>
     <string name="about_me_detail">Motivated Software Developer with 3 years of professional experience leading projects through all phases of software development life cycle. Demonstrated expertise in providing support for mobile and web applications while improving systems and enhancing performance. Skilled in using technologies such as Java, Dart, Kotlin, SQLite, VS Code, and Postgres.</string>
+
+    <string-array name="about_me_options">
+        <item>Strength</item>
+        <item>Weakness</item>
+    </string-array>
 </resources>

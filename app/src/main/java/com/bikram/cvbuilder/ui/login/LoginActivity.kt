@@ -1,4 +1,4 @@
-package com.bikram.cvbuilder.login
+package com.bikram.cvbuilder.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

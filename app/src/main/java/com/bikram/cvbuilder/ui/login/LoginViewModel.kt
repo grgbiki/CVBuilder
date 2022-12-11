@@ -1,4 +1,4 @@
-package com.bikram.cvbuilder.login
+package com.bikram.cvbuilder.ui.login
 
 import android.content.Context
 import android.content.SharedPreferences
