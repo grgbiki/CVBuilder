@@ -1,19 +1,25 @@
 package com.bikram.cvbuilder.ui.aboutme
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bikram.cvbuilder.databinding.RecyclerViewEducationItemBinding
+import com.bikram.cvbuilder.databinding.RecyclerViewItemWithSubtextBinding
 import com.bikram.cvbuilder.models.Education
+import com.bikram.cvbuilder.utils.LoadDrawableImage
 
-class EducationRecyclerAdapter(private var educations: List<Education>) :
+class EducationRecyclerAdapter(
+    private val context: Context,
+    private var educations: List<Education>
+) :
     RecyclerView.Adapter<EducationRecyclerAdapter.ViewHolder>() {
-    class ViewHolder(val binding: RecyclerViewEducationItemBinding) :
+    class ViewHolder(val binding: RecyclerViewItemWithSubtextBinding) :
         RecyclerView.ViewHolder(binding.root) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = RecyclerViewEducationItemBinding.inflate(LayoutInflater.from(parent.context))
+        val binding =
+            RecyclerViewItemWithSubtextBinding.inflate(LayoutInflater.from(parent.context))
 
         return ViewHolder(binding)
     }
@@ -21,8 +27,9 @@ class EducationRecyclerAdapter(private var educations: List<Education>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             with(educations[position]) {
-                binding.nameTextView.text = institution
-                binding.degreeTextView.text = degree
+                binding.titleTextView.text = institution
+                binding.subTitleTextView.text = degree
+                binding.logo.setImageResource(LoadDrawableImage.getDrawableImage(context, logo))
             }
         }
     }

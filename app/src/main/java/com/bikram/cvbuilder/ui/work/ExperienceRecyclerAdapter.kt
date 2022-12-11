@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bikram.cvbuilder.R
 import com.bikram.cvbuilder.databinding.RecyclerViewExperienceItemBinding
 import com.bikram.cvbuilder.models.Experience
+import com.bikram.cvbuilder.utils.LoadDrawableImage
 
 class ExperienceRecyclerAdapter(private var experiences: List<Experience>, var context: Context) :
     RecyclerView.Adapter<ExperienceRecyclerAdapter.ViewHolder>() {
@@ -28,11 +29,12 @@ class ExperienceRecyclerAdapter(private var experiences: List<Experience>, var c
                 binding.employerTextView.text = employer
                 binding.durationTextView.text = "$startDate - $endDate"
                 binding.locationTextView.text = "$address, $country"
+                binding.logo.setImageResource(LoadDrawableImage.getDrawableImage(context, employerImageUri))
 
                 binding.responsibilityListView.adapter =
                     ArrayAdapter(
                         context,
-                        R.layout.list_view_responsibility_item,
+                        R.layout.list_view_item,
                         responsibilities
                     )
             }

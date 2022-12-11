@@ -7,5 +7,6 @@ data class Experience(
     val jobTitle: String,
     val startDate: String,
     val endDate: String,
+    val employerImageUri: String,
     val responsibilities: List<String>
 )

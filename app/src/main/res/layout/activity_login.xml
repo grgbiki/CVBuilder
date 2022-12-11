@@ -11,12 +11,12 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/logo"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/login_form"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/login_form"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/login_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,63 +29,110 @@
             android:id="@+id/tite_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_20"
+            android:gravity="center"
             android:text="@string/app_name"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginBottom="@dimen/spacing_20" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email_edit_text"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_edit_text_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tite_text"
-            android:layout_marginBottom="@dimen/spacing_15"
-            android:background="@drawable/background_rounded_corner"
-            android:backgroundTint="@color/light_grey"
-            android:hint="@string/hint_email"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/password_edit_text"
-            android:drawablePadding="@dimen/spacing_5"
-            android:drawableStart="@drawable/ic_email_24dp" />
+            android:layout_marginTop="@dimen/spacing_15"
+            app:layout_constraintTop_toBottomOf="@+id/tite_text">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_edit_text"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_rounded_corner"
+                android:backgroundTint="@color/light_grey"
+                android:drawableStart="@drawable/ic_email_24dp"
+                android:drawablePadding="@dimen/spacing_5"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_edit_text_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/email_edit_text"
-            android:layout_marginBottom="@dimen/spacing_15"
-            android:background="@drawable/background_rounded_corner"
-            android:backgroundTint="@color/light_grey"
-            android:hint="@string/hint_password"
-            android:inputType="textPassword"
-            android:drawablePadding="@dimen/spacing_5"
-            android:drawableStart="@drawable/ic_lock_black_24dp"
-            android:drawableEnd="@drawable/ic_red_eye_filled_24dp"/>
+            android:layout_marginTop="@dimen/spacing_15"
+            app:layout_constraintTop_toBottomOf="@+id/email_edit_text_layout"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
+                android:drawablePadding="@dimen/spacing_5"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                tools:text="password" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirm_password_edit_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/password_edit_text_layout"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirm_password_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_rounded_corner"
+                android:backgroundTint="@color/light_grey"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
+                android:drawablePadding="@dimen/spacing_5"
+                android:hint="@string/hint_confirm_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                tools:text="password" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:text="@string/forgot_password"
+            android:textColor="@color/purple_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirm_password_edit_text_layout" />
 
         <TextView
             android:id="@+id/error_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/password_edit_text"
-            android:layout_marginBottom="@dimen/spacing_15"
-            android:gravity="center"
+            android:layout_marginTop="@dimen/spacing_15"
             android:background="@drawable/background_rounded_corner"
             android:backgroundTint="@color/error_red"
+            android:gravity="center"
             android:padding="@dimen/spacing_15"
             android:text="@string/login_error"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/forgot_password" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/error_text_view"
-            android:layout_marginTop="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_20"
             android:insetTop="0dp"
             android:insetBottom="0dp"
             android:padding="@dimen/spacing_18"
-            android:text="@string/login_button_text" />
-    </RelativeLayout>
+            android:text="@string/login_button_text"
+            app:layout_constraintTop_toBottomOf="@+id/error_text_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

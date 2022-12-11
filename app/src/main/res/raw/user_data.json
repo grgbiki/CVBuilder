@@ -2,16 +2,19 @@
   "educations": [
     {
       "institution": "Maharishi International University",
-      "degree": "Masters of Science in Computer Science"
+      "degree": "Masters of Science in Computer Science",
+      "logo": "@drawable/miu"
     },
     {
       "institution": "Islington College",
-      "degree": "Bachelors of Science in Computing (Hons)"
+      "degree": "Bachelors of Science in Computing (Hons)",
+      "logo": "@drawable/islington"
     }
   ],
   "experiences": [
     {
       "employer": "Virtusa",
+      "employerImageUri": "@drawable/virtusa",
       "address": "MA",
       "country": "USA",
       "jobTitle": "Android Developer",
@@ -24,6 +27,7 @@
     },
     {
       "employer": "Karyathalo",
+      "employerImageUri": "@drawable/karyathalo",
       "address": "Kathmandu",
       "country": "Nepal",
       "jobTitle": "Flutter Developer",
@@ -37,6 +41,7 @@
     },
     {
       "employer": "Guru Infosys",
+      "employerImageUri": "@drawable/guru_infosys",
       "address": "Kathmandu",
       "country": "Nepal",
       "jobTitle": "Software Developer",
@@ -47,6 +52,33 @@
         "• Streamlining data migration from MySQL to Postgres",
         "• Improving and supporting existing .NET project"
       ]
+    }
+  ],
+  "contacts": [
+    {
+      "type": "Mobile",
+      "value": "+1(641) 123-456",
+      "logo": "@drawable/ic_phone"
+    },
+    {
+      "type": "Email",
+      "value": "bikram.gurung@gmail.com",
+      "logo": "@drawable/ic_email"
+    },
+    {
+      "type": "LinkedIn Website",
+      "value": "https://www.linkedin.com/in/gurung-bikram/",
+      "logo": "@drawable/linkedin"
+    },
+    {
+      "type": "GitHub",
+      "value": "https://github.com/grgbiki",
+      "logo": "@drawable/github"
+    },
+    {
+      "type": "Resume pdf",
+      "value": "PDF",
+      "logo": "@drawable/ic_pdf"
     }
   ]
 }

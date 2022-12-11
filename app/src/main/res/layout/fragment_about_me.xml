@@ -14,28 +14,11 @@
         app:contentPadding="@dimen/spacing_15"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <TextView
-                android:id="@+id/about_me_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="About Me"
-                android:textSize="@dimen/text_size_18"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/about_me_title"
-                android:layout_marginTop="@dimen/spacing_10"
-                android:justificationMode="inter_word"
-                android:text="@string/about_me_detail" />
-        </RelativeLayout>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:text="@string/about_me_detail" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -73,7 +56,70 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/my_college" />
         </RelativeLayout>
-
-
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/strength_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_15"
+        app:contentPadding="@dimen/spacing_15"
+        app:layout_constraintTop_toBottomOf="@+id/education_container">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/strength_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strength"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/strength_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/strength_title" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/weakness_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_15"
+        app:contentPadding="@dimen/spacing_15"
+        app:layout_constraintTop_toBottomOf="@+id/strength_container">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/weakness_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Education"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/weakness_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/weakness_title" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_15"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

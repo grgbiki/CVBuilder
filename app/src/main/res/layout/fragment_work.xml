@@ -11,16 +11,6 @@
         android:id="@+id/experience_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/work_experience_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_15"
-            android:text="Work Experience"
-            android:textSize="@dimen/text_size_18"
-            android:textStyle="bold" />
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

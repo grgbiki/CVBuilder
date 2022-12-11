@@ -24,20 +24,24 @@
         android:src="@drawable/profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/roundedImageView" />
+        app:shapeAppearanceOverlay="@style/roundedImageView"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/spacing_5" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/user_info"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_15"
-        android:background="@drawable/background_rounded_corner"
-        android:backgroundTint="@color/white"
+        android:layout_marginStart="@dimen/spacing_15"
+        android:layout_marginTop="@dimen/spacing_5"
+        android:layout_marginEnd="@dimen/spacing_15"
+        android:layout_marginBottom="@dimen/spacing_15"
         android:paddingStart="@dimen/spacing_15"
         android:paddingTop="@dimen/spacing_5"
-        android:paddingEnd="@dimen/spacing_15"
+        android:paddingEnd="@dimen/spacing_5"
         android:paddingBottom="@dimen/spacing_5"
-        app:layout_constraintBottom_toBottomOf="@+id/display_picture"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display_picture">
 
         <TextView
             android:id="@+id/name"
@@ -47,15 +51,28 @@
             android:text="Bikram Gurung"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_20"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/name"
             android:gravity="center"
-            android:text="Android Developer" />
-    </RelativeLayout>
+            android:text="Android Developer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:src="@drawable/virtusa_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/career_note_container"
@@ -63,15 +80,28 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacing_15"
         app:contentPadding="@dimen/spacing_15"
-        app:layout_constraintTop_toBottomOf="@+id/display_picture">
+        app:layout_constraintTop_toBottomOf="@+id/user_info">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Career Note"
-            android:textSize="@dimen/text_size_18"
-            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/career_note_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_5"
+                android:text="Career Note"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/career_note_title"
+                android:justificationMode="inter_word"
+                android:text="@string/career_note" />
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -82,13 +112,26 @@
         app:contentPadding="@dimen/spacing_15"
         app:layout_constraintTop_toBottomOf="@+id/career_note_container">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Work Experience"
-            android:textSize="@dimen/text_size_18"
-            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/experience_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_5"
+                android:text="Technology Experience"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/experience_title"
+                android:justificationMode="inter_word"
+                android:text="@string/technologies" />
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
